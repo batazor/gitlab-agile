@@ -11,11 +11,14 @@ npm start
 open page: http://localhost:4040
 ```
 
-### Use
+### Environment
 
-1. React
-2. Redux
-3. Babel
+| Variable | Description | Default |
+|:----------|:-------------|:---------:|
+| APP_NAME | -- | -- |
+| PORT | -- | -- |
+| DOMAIN | -- | -- |
+| ENV | -- | -- |
 
 ### Todo
 
