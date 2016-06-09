@@ -1,6 +1,22 @@
 # Gantt
 Gantt diagram for GitLab and Github
 
+### Install
+
+```
+git clone https://github.com/batazor/Gantt.git
+cd Gantt
+npm i
+npm start
+open page: http://localhost:4040
+```
+
+### Use
+
+1. React
+2. Redux
+3. Babel
+
 ### Todo
 
 - [ ] Create base modules
