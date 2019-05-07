@@ -38,7 +38,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^3.5.0",
     "classnames": "^2.2.5",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.28.11",
     "es6-promise": "^3.2.1",
     "esdoc": "^0.4.7",
     "eslint": "^2.11.1",
