@@ -6,7 +6,7 @@
   "major": {
     "automerge": false
   },
-  "major": {
+  "minor": {
     "automerge": true
   },
   "patch": {
