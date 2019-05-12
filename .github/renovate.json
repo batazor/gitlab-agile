@@ -4,9 +4,13 @@
   "baseBranches": ["master"],
   "automerge": true,
   "major": {
-    "automerge": false,
-    "minor": true,
-    "patch": true
+    "automerge": false
+  },
+  "major": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
   },
   "packageRules": [{
     "depTypeList": ["devDependencies"],
