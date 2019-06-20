@@ -57,7 +57,7 @@
     "redux-devtools": "^3.5.0",
     "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.34.0",
+    "webpack": "^4.35.0",
     "webpack-dev-server": "^3.7.2",
     "whatwg-fetch": "^3.0.0"
   }
