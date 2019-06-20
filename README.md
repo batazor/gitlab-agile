@@ -1,38 +1,26 @@
-# Gantt
-Gantt diagram for GitLab and Github
+# GitLab Agile
 
-### Install
-
-```
-git clone https://github.com/batazor/Gantt.git
-cd Gantt
-npm i
-npm start
-open page: http://localhost:4040
-```
+Tool for enjoy GitLab CE
 
 ### Environment
 
-| Variable | Description | Default |
-|:----------|:-------------|:---------:|
-| APP_NAME | -- | -- |
-| PORT | -- | -- |
-| DOMAIN | -- | -- |
-| ENV | -- | -- |
+| Variable     | Description | Default |
+|:------------ |:----------- |:-------:|
+| GITLAB_URL   | --          |   --    |
+| GITLAB_TOKEN | --          |   --    |
 
 ### Todo
 
-- [ ] Create base modules
-  - [ ] Configure WebPack
-- [ ] Connect to GitLab API
-  - [ ] Filter data
-  - [ ] Build Diagram gantt
-  - [ ] Update Tasks
-  - [ ] Add DnD
-- [ ] Connect to GitHub API
-  - [ ] Filter data
-  - [ ] Build Diagram gantt
-  - [ ] Update Tasks
-  - [ ] Add DnD
-- [ ] Save statistic to PDF, image and etc
-- [ ] Export to other top soft
+### 0.1.0
+
+- [ ] Create milestoune over UI
+- [ ] Statistic Export
+  - [ ] Issue
+    - [ ] count
+    - [ ] weight (parse from title)
+  - [ ] Project
+    - [ ] count in milestoune
+- [ ] Grafana Dashboard
+  - [ ] Toolbar: Select milestoune
+  - [ ] Chart by issue[count, weight]
+  - [ ] SCRUM Burn Down
