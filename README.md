@@ -13,7 +13,9 @@ Tool for enjoy GitLab CE
 
 ### 0.1.0
 
-- [ ] Create milestoune over UI
+- [ ] Create milestoune
+  - [ ] From slack? CI? UI?
+    - [ ] Slack `/workflow milestoune add [Name] [from (mm/dd/yy)] [to (mm/dd/yy)]`
 - [ ] Statistic Export
   - [ ] Issue
     - [ ] count
@@ -29,5 +31,7 @@ Tool for enjoy GitLab CE
     - [x] labels
 - [ ] SCRUM report
   - [ ] Table: `|Iteration|Plan weight|Actual weight|`
+- [ ] Report for PO/TL (import to Google Docs)
+  - [ ] `Planning & resources report`
 - [ ] Template
   - [ ] Clone `GitLab issue/MR` to each project
