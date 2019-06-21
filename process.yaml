@@ -55,6 +55,9 @@ labels:
   - name: "type:sale"
     description: "sale"
     color: "#FFECDB"
+  - name: "type:support"
+    description: "support clients of product"
+    color: "#FFECDB"
   # SCRUM pipeline
   - name: "New"
     description: "new task. Need close or move to backlog"
