@@ -5,7 +5,7 @@ Tool for enjoy GitLab CE
 ### Environment
 
 | Variable     | Description | Default |
-|:------------ |:----------- |:-------:|
+|:-------------|:------------|:-------:|
 | GITLAB_URL   | --          |   --    |
 | GITLAB_TOKEN | --          |   --    |
 
@@ -29,3 +29,5 @@ Tool for enjoy GitLab CE
     - [x] labels
 - [ ] SCRUM report
   - [ ] Table: `|Iteration|Plan weight|Actual weight|`
+- [ ] Template
+  - [ ] Clone `GitLab issue/MR` to each project
