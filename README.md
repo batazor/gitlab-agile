@@ -24,3 +24,8 @@ Tool for enjoy GitLab CE
   - [ ] Toolbar: Select milestoune
   - [ ] Chart by issue[count, weight]
   - [ ] SCRUM Burn Down
+- [x] Process (Template)
+  - [x] Read and apply `process.yaml`
+    - [x] labels
+- [ ] SCRUM report
+  - [ ] Table: `|Iteration|Plan weight|Actual weight|`
