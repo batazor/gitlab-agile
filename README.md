@@ -29,6 +29,7 @@ Tool for enjoy GitLab CE
 - [x] Process (Template)
   - [x] Read and apply `process.yaml`
     - [x] labels
+    - [ ] boards
 - [ ] SCRUM report
   - [ ] Table: `|Iteration|Plan weight|Actual weight|`
 - [ ] Report for PO/TL (import to Google Docs)
