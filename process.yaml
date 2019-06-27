@@ -82,3 +82,17 @@ boards:
     - review
     - staging
     - ready
+weight-to-spend:
+  # weight: hours
+  0.5: 0.1
+  1: 0.25
+  2: 0.5
+  3: 1
+  5: 3
+  8: 4
+  13: 5
+  20: 8
+  40: 16
+  100: 40
+  
+  
