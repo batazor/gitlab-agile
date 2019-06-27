@@ -23,24 +23,37 @@ func (git *GitLab) Apply() error {
 	process := Process{}
 	err = yaml.Unmarshal([]byte(config), &process)
 	if err != nil {
+		logger.Info(err.Error())
 		return err
 	}
 
 	// CONFIG
-	LABELS := process.Labels
+	//LABELS := process.Labels
+	BOARD := process.BoardList
+
+	//fmt.Println("BOARD", BOARD)
 
 	// Get list group
 	groups, err := git.ListGroup()
 	for _, group := range groups {
-		// Create labels for each project
-		for _, label := range LABELS {
-			err := git.CreateGroupLabel(group.ID, label)
-			if err != nil {
-				logger.Info(
-					"Create labels for group",
-					zap.Int("group Id", group.ID),
-					zap.String("label Name", label.Name),)
-			}
+		// Create labels for each group
+		//for _, label := range LABELS {
+		//	err := git.CreateGroupLabel(group.ID, label)
+		//	if err != nil {
+		//		logger.Info(
+		//			"Create labels for group",
+		//			zap.Int("group Id", group.ID),
+		//			zap.String("label Name", label.Name),)
+		//	}
+		//}
+
+		// Create board for each group
+		err := git.CreateBoardList(group.ID, BOARD)
+		if err != nil {
+			logger.Info(
+				"Create board list for group",
+				zap.Int("group Id", group.ID),
+			)
 		}
 	}
 

@@ -2,7 +2,6 @@ package gitlabClient
 
 import (
 	"bytes"
-	"fmt"
 	"github.com/spf13/viper"
 	"github.com/xanzy/go-gitlab"
 	"go.uber.org/zap"
@@ -41,9 +40,6 @@ func Run() (GitLab, error) {
 
 	GITLAB.Client = gitlab.NewClient(nil, viper.GetString("GITLAB_TOKEN"))
 	err := GITLAB.Client.SetBaseURL(viper.GetString("GITLAB_URL"))
-
-	fmt.Println(viper.GetString("GITLAB_URL"))
-	fmt.Println(viper.GetString("GITLAB_TOKEN"))
 
 	return GITLAB, err
 }

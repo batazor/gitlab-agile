@@ -9,5 +9,6 @@ type GitLab struct {
 }
 
 type Process struct {
-	Labels []gitlab.Label
+	Labels    []gitlab.Label
+	BoardList []gitlab.BoardList
 }

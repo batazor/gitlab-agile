@@ -73,15 +73,20 @@ labels:
   - name: "workflow::ready"
     description: "workflow"
     color: "#434343"
-boards: 
+boardList:
   # GitLab CE support only one board :-(
-  - labels:
-    - backlog
-    - todo
-    - development
-    - review
-    - staging
-    - ready
+  - label: workflow::backlog
+    position: 0
+  - label: workflow::todo
+    position: 1
+  - label: workflow::development
+    position: 2
+  - label: workflow::review
+    position: 3
+  - label: workflow::staging
+    position: 4
+  - label: workflow::ready
+    position: 5
 weight-to-spend:
   # weight: hours
   0.5: 0.1
