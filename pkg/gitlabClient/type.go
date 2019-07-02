@@ -12,3 +12,8 @@ type Process struct {
 	Labels    []gitlab.Label
 	BoardList []gitlab.BoardList
 }
+
+type Weight struct {
+	Actually int
+	Planned  int
+}

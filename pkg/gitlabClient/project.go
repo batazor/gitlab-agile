@@ -4,12 +4,12 @@ import (
 	"github.com/xanzy/go-gitlab"
 )
 
-func (git *GitLab) ListProject() ([]*gitlab.Project, error) {
+func (git *GitLab) GetListProject() ([]*gitlab.Project, error) {
 	FALSE := false
 	TRUE := true
 
 	opt := &gitlab.ListProjectsOptions{
-		Archived: &FALSE,
+		Archived:   &FALSE,
 		Membership: &TRUE,
 	}
 	projects, _, err := git.Client.Projects.ListProjects(opt)

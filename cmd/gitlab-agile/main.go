@@ -19,8 +19,16 @@ func main() {
 
 	logger.Info("Run GitLab")
 
+	// Create SCRUM-structure
 	err = git.Apply()
 	if err != nil {
 		zap.Error(err)
+	}
+
+	// Create report
+	err = git.ReportPlannedActually("Sprint_1")
+	if err != nil {
+		zap.Error(err)
+		return
 	}
 }
