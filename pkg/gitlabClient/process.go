@@ -30,8 +30,6 @@ func (git *GitLab) Apply() error {
 	LABELS := git.Config.Labels
 	BOARD := git.Config.BoardList
 
-	//fmt.Println("BOARD", BOARD)
-
 	// Get list group
 	groups, err := git.ListGroup()
 	for _, group := range groups {

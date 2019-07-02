@@ -1,14 +1,12 @@
 package gitlabClient
 
 import (
-	"fmt"
 	"github.com/xanzy/go-gitlab"
 )
 
 func (git *GitLab) ListGroup() ([]*gitlab.Group, error) {
 	opt := &gitlab.ListGroupsOptions{}
 	groups, _, err := git.Client.Groups.ListGroups(opt)
-	fmt.Println(groups)
 
 	return groups, err
 }

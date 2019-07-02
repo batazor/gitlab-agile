@@ -1,7 +1,6 @@
 package gitlabClient
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 )
@@ -9,8 +8,6 @@ import (
 func (git *GitLab) ParseWeight(title string) int {
 	var rgx = regexp.MustCompile(`\[(.*?)\]`)
 	rs := rgx.FindStringSubmatch(title)
-
-	fmt.Println(rs[1])
 
 	if len(rs) == 0 {
 		return 0
