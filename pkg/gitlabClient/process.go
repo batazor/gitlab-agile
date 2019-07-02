@@ -28,7 +28,7 @@ func (git *GitLab) Apply() error {
 	}
 
 	// CONFIG
-	//LABELS := process.Labels
+	LABELS := process.Labels
 	BOARD := process.BoardList
 
 	//fmt.Println("BOARD", BOARD)
@@ -37,23 +37,27 @@ func (git *GitLab) Apply() error {
 	groups, err := git.ListGroup()
 	for _, group := range groups {
 		// Create labels for each group
-		//for _, label := range LABELS {
-		//	err := git.CreateGroupLabel(group.ID, label)
-		//	if err != nil {
-		//		logger.Info(
-		//			"Create labels for group",
-		//			zap.Int("group Id", group.ID),
-		//			zap.String("label Name", label.Name),)
-		//	}
-		//}
+		if false {
+			for _, label := range LABELS {
+				err := git.CreateGroupLabel(group.ID, label)
+				if err != nil {
+					logger.Info(
+						"Create labels for group",
+						zap.Int("group Id", group.ID),
+						zap.String("label Name", label.Name))
+				}
+			}
+		}
 
 		// Create board for each group
-		err := git.CreateBoardList(group.ID, BOARD)
-		if err != nil {
-			logger.Info(
-				"Create board list for group",
-				zap.Int("group Id", group.ID),
-			)
+		if false {
+			err := git.CreateBoardList(group.ID, BOARD)
+			if err != nil {
+				logger.Info(
+					"Create board list for group",
+					zap.Int("group Id", group.ID),
+				)
+			}
 		}
 	}
 
