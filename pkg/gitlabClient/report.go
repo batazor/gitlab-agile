@@ -2,13 +2,13 @@ package gitlabClient
 
 import "fmt"
 
-func (git *GitLab) ReportPlannedActually(milestouneName string) error {
+func (git *GitLab) ReportPlannedActually() error {
 	weightTotal := Weight{
 		Actually: 0,
 		Planned:  0,
 	}
 
-	issues, err := git.GetMilestoneIssues(milestouneName)
+	issues, err := git.GetMilestoneIssues(git.Config.Current.Sprint)
 	if err != nil {
 		return err
 	}

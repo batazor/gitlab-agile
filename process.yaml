@@ -1,3 +1,5 @@
+current:
+  sprint: "Sprint_1" # GitLab searching bad by the name `Sprint 1`, need use only one word, as for example `Sprint_1`
 labels:
   # priority
   - name: "priority::low"

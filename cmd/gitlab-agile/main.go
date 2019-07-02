@@ -26,7 +26,7 @@ func main() {
 	}
 
 	// Create report
-	err = git.ReportPlannedActually("Sprint_1")
+	err = git.ReportPlannedActually()
 	if err != nil {
 		zap.Error(err)
 		return

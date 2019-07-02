@@ -20,16 +20,15 @@ func (git *GitLab) Apply() error {
 	}
 
 	// Parse config
-	process := Process{}
-	err = yaml.Unmarshal([]byte(config), &process)
+	err = yaml.Unmarshal([]byte(config), &git.Config)
 	if err != nil {
 		logger.Info(err.Error())
 		return err
 	}
 
 	// CONFIG
-	LABELS := process.Labels
-	BOARD := process.BoardList
+	LABELS := git.Config.Labels
+	BOARD := git.Config.BoardList
 
 	//fmt.Println("BOARD", BOARD)
 
