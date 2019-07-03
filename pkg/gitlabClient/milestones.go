@@ -1,6 +1,7 @@
 package gitlabClient
 
 import (
+	"fmt"
 	"github.com/xanzy/go-gitlab"
 )
 
@@ -31,7 +32,8 @@ func (git *GitLab) GetMilestoneIssues(name string) ([]*gitlab.Issue, error) {
 	}
 
 	for _, project := range projects {
-		m, err := git.GetMilestoneByName(*project, name)
+		nameMilestoune := fmt.Sprintf("\"%s\"", name)
+		m, err := git.GetMilestoneByName(*project, nameMilestoune)
 		if err != nil || m == nil {
 			// TODO: Check status code 403/404/etc
 			//return nil, err
