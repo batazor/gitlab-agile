@@ -1,16 +1,14 @@
 package gitlabClient
 
-import "fmt"
-
-func (git *GitLab) ReportPlannedActually() error {
+func (git *GitLab) ReportPlannedActually(name string) (Weight, error) {
 	weightTotal := Weight{
 		Actually: 0,
 		Planned:  0,
 	}
 
-	issues, err := git.GetMilestoneIssues(git.Config.Current.Sprint)
+	issues, err := git.GetMilestoneIssues(name)
 	if err != nil {
-		return err
+		return weightTotal, err
 	}
 
 	for _, issue := range issues {
@@ -23,7 +21,5 @@ func (git *GitLab) ReportPlannedActually() error {
 		weightTotal.Planned += weight
 	}
 
-	fmt.Println("weightTotal", weightTotal)
-
-	return nil
+	return weightTotal, nil
 }
