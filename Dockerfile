@@ -20,8 +20,6 @@ FROM alpine
 
 RUN apk add --no-cache ca-certificates
 
-USER 10001
-
 WORKDIR /app/
 COPY --from=builder /go/src/github.com/batazor/gitlab-agile/gitlab-agile .
 CMD ["./gitlab-agile"]
