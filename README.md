@@ -16,7 +16,7 @@ Tool for enjoy GitLab CE
 - [ ] Create milestoune
   - [ ] From slack? CI? UI?
     - [ ] Slack `/workflow milestoune add [Name] [from (mm/dd/yy)] [to (mm/dd/yy)]`
-    - [ ] Slack `/report [type] [milestoune name]` -> response table
+    - [x] Slack `/report [type] [milestoune name]` -> response table
 - [ ] Statistic Export
   - [ ] Issue
     - [ ] count
@@ -31,7 +31,7 @@ Tool for enjoy GitLab CE
   - [x] Read and apply `process.yaml`
     - [x] labels
     - [ ] boards
-- [ ] SCRUM report
+- [x] SCRUM report
   - [x] Table: `|Iteration|Plan weight|Actual weight|`
 - [ ] Report for PO/TL (import to Google Docs)
   - [ ] `Planning & resources report`
