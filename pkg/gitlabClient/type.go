@@ -22,4 +22,5 @@ type Current struct {
 type Weight struct {
 	Actually int
 	Planned  int
+	Nickname string
 }
