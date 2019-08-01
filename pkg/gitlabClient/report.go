@@ -71,7 +71,7 @@ func (git *GitLab) ReportPlannedActuallyByUser(name string) (map[string]*Weight,
 	for _, issue := range issues {
 		weight := git.ParseWeight(issue.Title)
 
-		if weightTotal[issue.Assignee.Username] != nil {
+		if issue.Assignee != nil && weightTotal[issue.Assignee.Username] != nil {
 			weightTotal[issue.Assignee.Username].Planned += weight
 
 			if issue.State == "closed" {
