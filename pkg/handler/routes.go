@@ -104,6 +104,16 @@ func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusOK)
 			json.NewEncoder(w).Encode(&originalMessage)
 			return
+		case "reportByMilestouneUser":
+			// Overwrite original drop down message.
+			originalMessage := message.OriginalMessage
+			originalMessage.Attachments[0].Text = "Enter command: `reportByMilestouneUser [nameMilestoune]`"
+			originalMessage.Attachments[0].Actions = []slack.AttachmentAction{}
+
+			w.Header().Add("Content-type", "application/json")
+			w.WriteHeader(http.StatusOK)
+			json.NewEncoder(w).Encode(&originalMessage)
+			return
 		}
 
 		// Overwrite original drop down message.
