@@ -144,11 +144,13 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 		var data = [][]string{}
 
 		header := []string{
-			"Title",
-			"Weight",
 			"Milestone",
 			"Milestone start",
 			"Milestone end",
+			"Work days",
+			"Project",
+			"Title",
+			"Weight",
 			"Author",
 			"State",
 			"Assignee",
@@ -175,18 +177,20 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 			}
 
 			header := []string{
-				issue.Title,
-				strconv.Itoa(weight),
 				issue.Milestone.Title,
 				issue.Milestone.StartDate.String(),
 				issue.Milestone.DueDate.String(),
+				"",
+				strconv.Itoa(issue.ProjectID),
+				issue.Title,
+				strconv.Itoa(weight),
 				issue.Author.Username,
 				issue.State,
 				issue.Assignee.Username,
 				strings.Join(issue.Labels, ","),
-				issues[i].CreatedAt.String(),
-				issues[i].UpdatedAt.String(),
-				issues[i].ClosedAt.String(),
+				issues[i].CreatedAt.Format("yyyy-mm-dd"),
+				issues[i].UpdatedAt.Format("yyyy-mm-dd"),
+				issues[i].ClosedAt.Format("yyyy-mm-dd"),
 				DueDate,
 				issue.WebURL,
 			}
