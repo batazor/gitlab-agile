@@ -203,6 +203,7 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 		}
 
 		writer := csv.NewWriter(file)
+		writer.Comma = ';'
 
 		for _, value := range data {
 			err := writer.Write(value)
