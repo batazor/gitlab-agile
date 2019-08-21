@@ -138,6 +138,90 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 			fmt.Printf("%s\n", err)
 		}
 		return nil
+	case "reportByIssue":
+		nameMilestone := strings.Join(m[1:], " ")
+
+		var data = [][]string{}
+
+		header := []string{
+			"Title",
+			"Weight",
+			"Milestone",
+			"Milestone start",
+			"Milestone end",
+			"Author",
+			"State",
+			"Assignee",
+			"Labels",
+			"CreatedAt",
+			"UpdatedAt",
+			"ClosedAt",
+			"DueDate",
+			"WebURL",
+		}
+		data = append(data, header)
+
+		issues, err := gitlabClient.GITLAB.ListIssue(&nameMilestone)
+		if err != nil {
+			fmt.Println("Error", err)
+		}
+
+		for i, issue := range issues {
+			weight := gitlabClient.GITLAB.ParseWeight(issue.Title)
+
+			var DueDate string
+			if issues[i].DueDate != nil {
+				DueDate = issues[i].DueDate.String()
+			}
+
+			header := []string{
+				issue.Title,
+				strconv.Itoa(weight),
+				issue.Milestone.Title,
+				issue.Milestone.StartDate.String(),
+				issue.Milestone.DueDate.String(),
+				issue.Author.Username,
+				issue.State,
+				issue.Assignee.Username,
+				strings.Join(issue.Labels, ","),
+				issues[i].CreatedAt.String(),
+				issues[i].UpdatedAt.String(),
+				issues[i].ClosedAt.String(),
+				DueDate,
+				issue.WebURL,
+			}
+			data = append(data, header)
+		}
+
+		file, err := os.Create("result.csv")
+		if err != nil {
+			fmt.Println("Error", err)
+		}
+
+		writer := csv.NewWriter(file)
+
+		for _, value := range data {
+			err := writer.Write(value)
+			if err != nil {
+				fmt.Println("Error", err)
+			}
+		}
+
+		writer.Flush()
+		file.Close()
+
+		params := slack.FileUploadParameters{
+			Filename: file.Name(),
+			Title:    file.Name(),
+			Channels: []string{ev.Channel},
+			File:     file.Name(),
+		}
+
+		_, err = s.client.UploadFile(params)
+		if err != nil {
+			fmt.Printf("%s\n", err)
+		}
+		return nil
 	case "hey":
 		// value is passed to message handler when request is approved.
 		attachment = slack.Attachment{
@@ -160,6 +244,10 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 						{
 							Text:  "Report by milestoune && user",
 							Value: "reportByMilestouneUser",
+						},
+						{
+							Text:  "Report by issues",
+							Value: "reportByIssue",
 						},
 					},
 				},
