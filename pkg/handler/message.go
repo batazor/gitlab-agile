@@ -188,9 +188,9 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 				issue.State,
 				issue.Assignee.Username,
 				strings.Join(issue.Labels, ","),
-				issues[i].CreatedAt.Format("yyyy-mm-dd"),
-				issues[i].UpdatedAt.Format("yyyy-mm-dd"),
-				issues[i].ClosedAt.Format("yyyy-mm-dd"),
+				issues[i].CreatedAt.Format("2006-01-02"),
+				issues[i].UpdatedAt.Format("2006-01-02"),
+				issues[i].ClosedAt.Format("2006-01-02"),
 				DueDate,
 				issue.WebURL,
 			}
