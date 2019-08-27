@@ -23,8 +23,10 @@ func (git *GitLab) ParseWeight(title string) int {
 }
 
 func (git *GitLab) ListIssue(milestone *string) ([]*gitlab.Issue, error) {
+	scope := "all"
 	opt := &gitlab.ListIssuesOptions{
 		Milestone: milestone,
+		Scope:     &scope,
 		ListOptions: gitlab.ListOptions{
 			PerPage: 100,
 			Page:    1,

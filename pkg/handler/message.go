@@ -176,6 +176,11 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 				DueDate = issues[i].DueDate.String()
 			}
 
+			var ClosedAt string
+			if issues[i].ClosedAt != nil {
+				ClosedAt = issues[i].ClosedAt.Format("2006-01-02")
+			}
+
 			header := []string{
 				issue.Milestone.Title,
 				issue.Milestone.StartDate.String(),
@@ -190,7 +195,7 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 				strings.Join(issue.Labels, ","),
 				issues[i].CreatedAt.Format("2006-01-02"),
 				issues[i].UpdatedAt.Format("2006-01-02"),
-				issues[i].ClosedAt.Format("2006-01-02"),
+				ClosedAt,
 				DueDate,
 				issue.WebURL,
 			}
