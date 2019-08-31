@@ -28,7 +28,7 @@ github.com/hashicorp/hcl/json/token
 github.com/magiconair/properties
 # github.com/mitchellh/mapstructure v1.1.2
 github.com/mitchellh/mapstructure
-# github.com/nlopes/slack v0.5.1-0.20190623232825-2891986e2a3e
+# github.com/nlopes/slack v0.6.0
 github.com/nlopes/slack
 github.com/nlopes/slack/internal/errorsx
 github.com/nlopes/slack/internal/timex
