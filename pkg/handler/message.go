@@ -155,6 +155,8 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 			"State",
 			"Assignee",
 			"Labels",
+			"Estimate",
+			"Spend",
 			"CreatedAt",
 			"UpdatedAt",
 			"ClosedAt",
@@ -181,18 +183,25 @@ func (s *SlackListener) handleMessageEvent(ev *slack.MessageEvent) error {
 				ClosedAt = issues[i].ClosedAt.Format("2006-01-02")
 			}
 
+			project, _, err := gitlabClient.GITLAB.Client.Projects.GetProject(issue.ProjectID, nil)
+			if err != nil {
+				fmt.Errorf("Error get project: %s", err.Error())
+			}
+
 			header := []string{
 				issue.Milestone.Title,
 				issue.Milestone.StartDate.String(),
 				issue.Milestone.DueDate.String(),
 				"",
-				strconv.Itoa(issue.ProjectID),
+				project.Name,
 				issue.Title,
 				strconv.Itoa(weight),
 				issue.Author.Username,
 				issue.State,
 				issue.Assignee.Username,
 				strings.Join(issue.Labels, ","),
+				issue.TimeStats.HumanTimeEstimate,
+				issue.TimeStats.HumanTotalTimeSpent,
 				issues[i].CreatedAt.Format("2006-01-02"),
 				issues[i].UpdatedAt.Format("2006-01-02"),
 				ClosedAt,
