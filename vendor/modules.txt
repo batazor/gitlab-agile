@@ -48,7 +48,7 @@ github.com/spf13/jwalterweatherman
 github.com/spf13/pflag
 # github.com/spf13/viper v1.4.0
 github.com/spf13/viper
-# github.com/xanzy/go-gitlab v0.20.1
+# github.com/xanzy/go-gitlab v0.21.0
 github.com/xanzy/go-gitlab
 # go.uber.org/atomic v1.4.0
 go.uber.org/atomic
