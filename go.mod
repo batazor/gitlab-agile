@@ -10,5 +10,5 @@ require (
 	github.com/spf13/viper v1.6.2
 	github.com/xanzy/go-gitlab v0.22.3
 	go.uber.org/zap v1.13.0
-	gopkg.in/yaml.v2 v2.2.7
+	gopkg.in/yaml.v2 v2.2.8
 )
