@@ -13,6 +13,10 @@ github.com/golang/protobuf/proto
 github.com/google/go-querystring/query
 # github.com/gorilla/websocket v1.4.0
 github.com/gorilla/websocket
+# github.com/hashicorp/go-cleanhttp v0.5.1
+github.com/hashicorp/go-cleanhttp
+# github.com/hashicorp/go-retryablehttp v0.6.4
+github.com/hashicorp/go-retryablehttp
 # github.com/hashicorp/hcl v1.0.0
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/ast
@@ -50,7 +54,7 @@ github.com/spf13/pflag
 github.com/spf13/viper
 # github.com/subosito/gotenv v1.2.0
 github.com/subosito/gotenv
-# github.com/xanzy/go-gitlab v0.28.0
+# github.com/xanzy/go-gitlab v0.29.0
 github.com/xanzy/go-gitlab
 # go.uber.org/atomic v1.6.0
 go.uber.org/atomic
@@ -74,6 +78,8 @@ golang.org/x/sys/unix
 # golang.org/x/text v0.3.0
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
+# golang.org/x/time v0.0.0-20191024005414-555d28b269f0
+golang.org/x/time/rate
 # google.golang.org/appengine v1.3.0
 google.golang.org/appengine/internal
 google.golang.org/appengine/internal/base
