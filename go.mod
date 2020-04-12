@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/go-chi/chi v4.1.0+incompatible
-	github.com/go-chi/cors v1.1.0
+	github.com/go-chi/cors v1.1.1
 	github.com/go-chi/render v1.0.1
 	github.com/nlopes/slack v0.6.0
 	github.com/spf13/viper v1.6.3
