@@ -458,7 +458,7 @@ type CreateProjectOptions struct {
 	Description                               *string             `url:"description,omitempty" json:"description,omitempty"`
 	IssuesAccessLevel                         *AccessControlValue `url:"issues_access_level,omitempty" json:"issues_access_level,omitempty"`
 	RepositoryAccessLevel                     *AccessControlValue `url:"repository_access_level,omitempty" json:"repository_access_level,omitempty"`
-	MergeRequestAccessLevel                   *AccessControlValue `url:"merge_request_access_level,omitempty" json:"merge_request_access_level,omitempty"`
+	MergeRequestsAccessLevel                  *AccessControlValue `url:"merge_requests_access_level,omitempty" json:"merge_requests_access_level,omitempty"`
 	ForkingAccessLevel                        *AccessControlValue `url:"forking_access_level,omitempty" json:"forking_access_level,omitempty"`
 	BuildsAccessLevel                         *AccessControlValue `url:"builds_access_level,omitempty" json:"builds_access_level,omitempty"`
 	WikiAccessLevel                           *AccessControlValue `url:"wiki_access_level,omitempty" json:"wiki_access_level,omitempty"`
@@ -561,7 +561,7 @@ type EditProjectOptions struct {
 	Description                               *string             `url:"description,omitempty" json:"description,omitempty"`
 	IssuesAccessLevel                         *AccessControlValue `url:"issues_access_level,omitempty" json:"issues_access_level,omitempty"`
 	RepositoryAccessLevel                     *AccessControlValue `url:"repository_access_level,omitempty" json:"repository_access_level,omitempty"`
-	MergeRequestAccessLevel                   *AccessControlValue `url:"merge_request_access_level,omitempty" json:"merge_request_access_level,omitempty"`
+	MergeRequestsAccessLevel                  *AccessControlValue `url:"merge_requests_access_level,omitempty" json:"merge_requests_access_level,omitempty"`
 	ForkingAccessLevel                        *AccessControlValue `url:"forking_access_level,omitempty" json:"forking_access_level,omitempty"`
 	BuildsAccessLevel                         *AccessControlValue `url:"builds_access_level,omitempty" json:"builds_access_level,omitempty"`
 	WikiAccessLevel                           *AccessControlValue `url:"wiki_access_level,omitempty" json:"wiki_access_level,omitempty"`
@@ -857,6 +857,7 @@ type ProjectHook struct {
 	ConfidentialNoteEvents   bool       `json:"confidential_note_events"`
 	ProjectID                int        `json:"project_id"`
 	PushEvents               bool       `json:"push_events"`
+	PushEventsBranchFilter   string     `json:"push_events_branch_filter"`
 	IssuesEvents             bool       `json:"issues_events"`
 	ConfidentialIssuesEvents bool       `json:"confidential_issues_events"`
 	MergeRequestsEvents      bool       `json:"merge_requests_events"`
@@ -932,6 +933,7 @@ type AddProjectHookOptions struct {
 	URL                      *string `url:"url,omitempty" json:"url,omitempty"`
 	ConfidentialNoteEvents   *bool   `url:"confidential_note_events,omitempty" json:"confidential_note_events,omitempty"`
 	PushEvents               *bool   `url:"push_events,omitempty" json:"push_events,omitempty"`
+	PushEventsBranchFilter   *string `url:"push_events_branch_filter,omitempty" json:"push_events_branch_filter,omitempty"`
 	IssuesEvents             *bool   `url:"issues_events,omitempty" json:"issues_events,omitempty"`
 	ConfidentialIssuesEvents *bool   `url:"confidential_issues_events,omitempty" json:"confidential_issues_events,omitempty"`
 	MergeRequestsEvents      *bool   `url:"merge_requests_events,omitempty" json:"merge_requests_events,omitempty"`
@@ -977,6 +979,7 @@ type EditProjectHookOptions struct {
 	URL                      *string `url:"url,omitempty" json:"url,omitempty"`
 	ConfidentialNoteEvents   *bool   `url:"confidential_note_events,omitempty" json:"confidential_note_events,omitempty"`
 	PushEvents               *bool   `url:"push_events,omitempty" json:"push_events,omitempty"`
+	PushEventsBranchFilter   *string `url:"push_events_branch_filter,omitempty" json:"push_events_branch_filter,omitempty"`
 	IssuesEvents             *bool   `url:"issues_events,omitempty" json:"issues_events,omitempty"`
 	ConfidentialIssuesEvents *bool   `url:"confidential_issues_events,omitempty" json:"confidential_issues_events,omitempty"`
 	MergeRequestsEvents      *bool   `url:"merge_requests_events,omitempty" json:"merge_requests_events,omitempty"`
