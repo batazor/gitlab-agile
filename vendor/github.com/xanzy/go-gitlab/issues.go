@@ -113,7 +113,8 @@ type Issue struct {
 	Links                *IssueLinks      `json:"_links"`
 	IssueLinkID          int              `json:"issue_link_id"`
 	MergeRequestCount    int              `json:"merge_requests_count"`
-	EpicIssueID          int              `json:"epic_issue_id"`
+	EpicIssueID          int              `json:"epic_issue_id"` 
+	Epic                 *Epic            `json:"epic"`
 	TaskCompletionStatus struct {
 		Count          int `json:"count"`
 		CompletedCount int `json:"completed_count"`
@@ -429,6 +430,8 @@ type UpdateIssueOptions struct {
 	AssigneeIDs      []int      `url:"assignee_ids,omitempty" json:"assignee_ids,omitempty"`
 	MilestoneID      *int       `url:"milestone_id,omitempty" json:"milestone_id,omitempty"`
 	Labels           *Labels    `url:"labels,comma,omitempty" json:"labels,omitempty"`
+	AddLabels        *Labels    `url:"add_labels,comma,omitempty" json:"add_labels,omitempty"`
+	RemoveLabels     *Labels    `url:"remove_labels,comma,omitempty" json:"remove_labels,omitempty"`
 	StateEvent       *string    `url:"state_event,omitempty" json:"state_event,omitempty"`
 	UpdatedAt        *time.Time `url:"updated_at,omitempty" json:"updated_at,omitempty"`
 	DueDate          *ISOTime   `url:"due_date,omitempty" json:"due_date,omitempty"`
@@ -672,4 +675,29 @@ func (s *IssuesService) ResetSpentTime(pid interface{}, issue int, options ...Re
 // https://docs.gitlab.com/ce/api/issues.html#get-time-tracking-stats
 func (s *IssuesService) GetTimeSpent(pid interface{}, issue int, options ...RequestOptionFunc) (*TimeStats, *Response, error) {
 	return s.timeStats.getTimeSpent(pid, "issues", issue, options...)
+}
+
+// GetParticipants gets a list of issue participants.
+//
+// GitLab API docs:
+// https://docs.gitlab.com/ce/api/issues.html#participants-on-issues
+func (s *IssuesService) GetParticipants(pid interface{}, issue int, options ...RequestOptionFunc) ([]*BasicUser, *Response, error) {
+	project, err := parseID(pid)
+	if err != nil {
+		return nil, nil, err
+	}
+	u := fmt.Sprintf("projects/%s/issues/%d/participants", pathEscape(project), issue)
+
+	req, err := s.client.NewRequest("GET", u, nil, options)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	var bu []*BasicUser
+	resp, err := s.client.Do(req, &bu)
+	if err != nil {
+		return nil, resp, err
+	}
+
+	return bu, resp, err
 }
