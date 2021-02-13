@@ -54,7 +54,7 @@ github.com/spf13/pflag
 github.com/spf13/viper
 # github.com/subosito/gotenv v1.2.0
 github.com/subosito/gotenv
-# github.com/xanzy/go-gitlab v0.43.0
+# github.com/xanzy/go-gitlab v0.44.0
 github.com/xanzy/go-gitlab
 # go.uber.org/atomic v1.6.0
 go.uber.org/atomic
