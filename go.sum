@@ -307,6 +307,8 @@ github.com/xanzy/go-gitlab v0.45.0 h1:sspml7xxIkT5BnbCn6Bc8YlMs5sx+cnjPmvmTJgci+
 github.com/xanzy/go-gitlab v0.45.0/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=
 github.com/xanzy/go-gitlab v0.46.0 h1:Wc7MxSz1UAg9ULKiBtPe0StAh2pVW3UINKmVxtqxibE=
 github.com/xanzy/go-gitlab v0.46.0/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=
+github.com/xanzy/go-gitlab v0.47.0 h1:nC35CNaGr9skHkJq1HMYZ58R7gZsy7SO37SkA2RIHbM=
+github.com/xanzy/go-gitlab v0.47.0/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
