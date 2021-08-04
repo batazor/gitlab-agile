@@ -8,7 +8,7 @@ require (
 	github.com/go-chi/render v1.0.1
 	github.com/nlopes/slack v0.6.0
 	github.com/spf13/viper v1.8.1
-	github.com/xanzy/go-gitlab v0.50.1
+	github.com/xanzy/go-gitlab v0.50.2
 	go.uber.org/zap v1.18.1
 	gopkg.in/yaml.v2 v2.4.0
 )
