@@ -59,7 +59,7 @@ github.com/spf13/viper/internal/encoding/toml
 github.com/spf13/viper/internal/encoding/yaml
 # github.com/subosito/gotenv v1.2.0
 github.com/subosito/gotenv
-# github.com/xanzy/go-gitlab v0.55.0
+# github.com/xanzy/go-gitlab v0.55.1
 github.com/xanzy/go-gitlab
 # go.uber.org/atomic v1.7.0
 go.uber.org/atomic
