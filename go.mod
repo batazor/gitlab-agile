@@ -9,7 +9,7 @@ require (
 	github.com/nlopes/slack v0.6.0
 	github.com/spf13/viper v1.12.0
 	github.com/xanzy/go-gitlab v0.73.1
-	go.uber.org/zap v1.22.0
+	go.uber.org/zap v1.23.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
