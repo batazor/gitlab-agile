@@ -1,6 +1,6 @@
 module github.com/batazor/gitlab-agile
 
-go 1.19
+go 1.20
 
 require (
 	github.com/go-chi/chi v4.1.2+incompatible
