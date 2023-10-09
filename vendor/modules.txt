@@ -104,7 +104,7 @@ github.com/spf13/viper/internal/encoding/yaml
 # github.com/subosito/gotenv v1.6.0
 ## explicit; go 1.18
 github.com/subosito/gotenv
-# github.com/xanzy/go-gitlab v0.93.0
+# github.com/xanzy/go-gitlab v0.93.1
 ## explicit; go 1.18
 github.com/xanzy/go-gitlab
 # go.uber.org/atomic v1.9.0
